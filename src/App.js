@@ -7,6 +7,7 @@ import Details from './components/Details';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Footer from './components/Footer';
 
+
 function App() {
   return (
     <>
@@ -17,7 +18,7 @@ function App() {
           <Route exact path="/cart" element={<Cart />} />
           <Route path="/details" element={<Details />} />
           <Route path="/*" element={<Error />} />        
-        </Routes>
+        </Routes>         
         <Footer />
       </Router>
     </>
