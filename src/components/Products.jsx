@@ -1,9 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import '../styles/Products.css'
 import { FaCartArrowDown } from 'react-icons/fa'
 import { FaEye } from 'react-icons/fa'
+import { CartContext } from '../context/CartContext';
 
 export default function Products({ products }) {
+    const {cart, addToCart } = useContext(CartContext);
+
+   
+
 
     return (
         <div>
@@ -22,8 +27,8 @@ export default function Products({ products }) {
                             <span>{product.price} $</span>
 
                             <div className="buttons">
-                                <button><FaCartArrowDown /></button>
-                                <button><FaEye /></button>
+                                <button onClick={()=>addToCart(product)}><FaCartArrowDown /></button>
+                                <button ><FaEye /></button>
                             </div>
                         </div>
 
