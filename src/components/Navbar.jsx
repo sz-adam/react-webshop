@@ -1,13 +1,22 @@
-import { useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import '../styles/Navbar.css'
 import { AiOutlineHome } from 'react-icons/ai'
 import { AiOutlineShoppingCart } from 'react-icons/ai'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { AiOutlineClose } from 'react-icons/ai'
+import { CartContext } from '../context/CartContext';
 
 export default function Navbar() {
   const [mobile, setMobile] = useState(false)
+ const { cart } = useContext(CartContext);
+  const [cartItemCount, setCartItemCount] = useState(0);
+  const [showItemCount, setShowItemCount] = useState(false);
+
+  useEffect(() => {
+    setShowItemCount(cart.length > 0)
+    setCartItemCount(cart.length);
+  }, [cart]);
 
   const closeMobileMenu = () => {
     setMobile(false);
@@ -19,7 +28,8 @@ export default function Navbar() {
           {mobile ? 'Home' :<AiOutlineHome />}
         </Link>
         <Link to="/cart" className="navLink" onClick={closeMobileMenu}>
-          {mobile ? 'Cart' :  <AiOutlineShoppingCart />}
+          {mobile ? 'Cart' :  <AiOutlineShoppingCart /> }
+           {showItemCount && <span className="cartItemCount">{cartItemCount}</span>}
         </Link>
       </div>
       <button className='mobile-menu-icon' onClick={() => setMobile(!mobile)}>
