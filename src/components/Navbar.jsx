@@ -29,7 +29,7 @@ export default function Navbar() {
         </Link>
         <Link to="/cart" className="navLink" onClick={closeMobileMenu}>
           {mobile ? 'Cart' :  <AiOutlineShoppingCart /> }
-           {showItemCount && <span className="cartItemCount">{cartItemCount}</span>}
+           {showItemCount && <sup><span className="cartItemCount">{cartItemCount}</span></sup>}
         </Link>
       </div>
       <button className='mobile-menu-icon' onClick={() => setMobile(!mobile)}>
