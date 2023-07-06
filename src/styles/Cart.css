@@ -1,0 +1,66 @@
+.cartContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cartItem {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 500px;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+
+.cartImage img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    
+}
+
+.cartTitle {
+    text-align: center;
+}
+
+.cartTitle p {
+    text-align: center;
+}
+
+.cartTitle p:nth-child(2) {
+    font-weight: bold;
+}
+
+.cartButtons {
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.cartSpan,
+.cartButton {
+    margin: 10px;
+}
+
+.cartButton, .cartDelete {
+    border: none;
+    background: none;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.cartButtons button:nth-child(1):hover {
+    color: red;
+}
+.cartButtons button:nth-child(3):hover {
+    color: green;
+}
+
+.cartDelete:hover{
+    color: rgb(151, 151, 151);
+}
