@@ -34,18 +34,36 @@ export const CartProvider = ({ children }) => {
   };
 
   const plusQuantity =(product) =>{
-   
+    const plus = cart.map(item => {
+      if (item.id === product.id) {
+        return {
+        ...item,
+          quantity: item.quantity + 1,
+        };
+      }
+      return item;
+    });
+    setCart(plus);
   }
 
   const minusQuantity =(product) =>{
-   
+    const minus = cart.map(item => {
+      if (item.id === product.id) {
+        return {
+        ...item,
+          quantity: item.quantity - 1,
+        };
+      }
+      return item;
+    });
+    setCart(minus);
   }
 
 
 
 
   return (
-    <CartContext.Provider value={{ cart, addToCart,removeCart,plusQuantity,}}>
+    <CartContext.Provider value={{ cart, addToCart,removeCart,plusQuantity,minusQuantity}}>
       {children}
     </CartContext.Provider>
   );
