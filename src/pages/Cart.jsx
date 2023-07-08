@@ -7,7 +7,7 @@ import { AiFillDelete } from 'react-icons/ai'
 import { Link } from 'react-router-dom';
 
 export default function Cart() {
-  const { cart, removeCart,plusQuantity,minusQuantity} = useContext(CartContext);
+  const { cart, removeCart, plusQuantity, minusQuantity } = useContext(CartContext);
   return (
     <div className='cartContainer'>
       {cart.length === 0 && <h2>Még nem vásároltál semmit sem ! <Link to="/">Hopp </Link></h2>}
@@ -25,12 +25,12 @@ export default function Cart() {
                 <p>{cartItem.title.substring(0, 20)}...</p>
                 <p>${cartItem.price}</p>
                 <div className='cartButtons'>
-                  <button className='cartButton' onClick={() =>minusQuantity(cartItem)}><AiFillMinusCircle /></button>
+                  <button className='cartButton' disabled={cartItem.quantity === 1} onClick={() => minusQuantity(cartItem)}><AiFillMinusCircle /></button>
                   <span className='cartSpan'>{cartItem.quantity}</span>
-                  <button className='cartButton' onClick={() =>plusQuantity(cartItem) }><AiFillPlusCircle /></button>
+                  <button className='cartButton' onClick={() => plusQuantity(cartItem)}><AiFillPlusCircle /></button>
                 </div>
                 <button className='cartDelete' onClick={() => removeCart(cartItem)}><AiFillDelete /></button>
-                
+
               </div>
             </div>
           ))}

@@ -42,11 +42,13 @@
     width: 50px;
 }
 
-.buttons button{
+.buttons button, .productLink{
     margin: 10px 0;
     font-size: 30px;
     border: none;
     cursor: pointer;
     background: none;   
+    color: black;
+  
 }
 
