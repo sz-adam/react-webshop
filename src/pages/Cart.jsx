@@ -36,7 +36,7 @@ export default function Cart() {
           ))}
           <div>
           </div>
-          <p>Full Price: {cart.reduce((total, item) => total + (item.quantity * item.price), 0)}</p>
+          <p>Full Price: {cart.reduce((total, item) => total + (item.quantity * item.price), 0).toFixed(2)}</p>
         </div>
 
 
