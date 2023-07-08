@@ -10,7 +10,8 @@ export default function Cart() {
   const { cart, removeCart, plusQuantity, minusQuantity } = useContext(CartContext);
   return (
     <div className='cartContainer'>
-      {cart.length === 0 && <h2>Még nem vásároltál semmit sem ! <Link to="/">Hopp </Link></h2>}
+      {cart.length === 0 && <h2>You haven't bought anything yet! <Link to="/">
+        Come on </Link></h2>}
       {cart.length !== 0 && (
         <div>
           {cart.map((cartItem, index) => (
@@ -36,7 +37,11 @@ export default function Cart() {
           ))}
           <div>
           </div>
-          <p>Full Price: {cart.reduce((total, item) => total + (item.quantity * item.price), 0).toFixed(2)}</p>
+          <p className='fullPrice'>Full Price: <span>{cart.reduce((total, item) => total + (item.quantity * item.price), 0).toFixed(2)}</span> </p>
+          <div className='shoppingPayment'>
+            <Link className='link' to={"/"}>Continue Shopping</Link>
+            <Link className='link'>Payment</Link>
+          </div>
         </div>
 
 

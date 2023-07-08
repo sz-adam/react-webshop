@@ -56,14 +56,40 @@
 }
 
 .cartButtons button:nth-child(1):hover {
-    color: red;
+    color: rgb(202, 54, 54);
 }
 .cartButtons button:nth-child(3):hover {
-    color: green;
+    color: rgb(51, 163, 51);
 }
-
 .cartDelete:hover{
     color: rgb(151, 151, 151);
+}
+
+.fullPrice{
+    text-align: center;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+.fullPrice span{
+   text-decoration:underline;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.shoppingPayment{
+    display: flex;
+    justify-content: space-around;
+  
+}
+.link{
+    text-decoration: none;
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: rgb(55, 109, 209);
+    color: rgb(240, 239, 239);
+    font-weight: 700;
 }
 
 @media only screen and (max-width: 576px) {
