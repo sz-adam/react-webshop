@@ -2,9 +2,31 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 10px;
+    margin: 10px ;
+    
+}
+.buttonCategory, .active{
+    background-color: transparent;
+   padding: 10px;
+   margin: 0 10px;
+   border-radius: 20px;
+   font-weight: 600;
+   font-size: 16px;
 }
 
 .active{
-    color: red;
+    color: rgb(29, 146, 224);
 }
+
+@media only screen and (max-width: 576px) {
+    .categoryContainer{
+        flex-direction: column;
+      
+    }
+
+    .buttonCategory, .active{
+        margin: 5px;
+    }
+  
+   
+  }

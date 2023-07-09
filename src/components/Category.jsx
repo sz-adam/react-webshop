@@ -5,11 +5,10 @@ export default function Category({ categories, selectedCategory, handleCategoryC
   return (
     <div className='categoryContainer'>
       {categories.map(category => (
-        <button
+        <button 
           key={category}
-          onClick={() => handleCategoryClick(category)}
-          style={{ marginRight: '8px' }}
-          className={selectedCategory === category ? 'active' : ''}
+          onClick={() => handleCategoryClick(category)}        
+          className={selectedCategory === category ? 'active' : 'buttonCategory'}
         >
           {category === "all" ? "All" : category}
         </button>
