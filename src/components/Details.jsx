@@ -1,13 +1,16 @@
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import React, { useContext, useEffect, useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
 import axios from 'axios'
 import '../styles/Details.css'
+import DetailsImage from './DetailsImage';
+
+import DetailsButton from './DetailsButton';
 
 
 export default function Details() {
   const { id } = useParams();
-
   const [details, setDetails] = useState([])
+
   console.log(details)
   useEffect(() => {
     axios.get(`https://fakestoreapi.com/products/${id}`)
@@ -22,30 +25,23 @@ export default function Details() {
 
 
   return (
-    <div className='detailsContainer'>
-      <div className='detailsImageContainer'>
-        <div className="detailsImage">
-          <div className="largeDiv">
-            <img
-            className="card-img"
-            src={details.image}
-            alt={details.name}
-          /></div>
-          <div className='smallDiv'>
-            <div>2</div>
-            <div>3</div>
-            <div>4</div>
-            <div>5</div>
-          </div>
-        </div>
+    <div className="detailsContainer">
+      <div className="detailsImageContainer">
+        <DetailsImage details={details} />
       </div>
       <div className="detailsTitleContainer">
-      <p>{details.title}</p>
-        <p>{details.category}</p>       
-        <p>{details.description}</p>   
-       
-        <p>{details.price}</p>
+        <p className="detailsTitle">{details.title}</p>
+        <p className="detailsCategory">{details.category}</p>
+        <p className="detailsDescription">{details.description}</p>
+        <p className="detailsRating">{details.rating && details.rating.rate}</p>
+        <p className="detailsPrice">{details.price}</p>
+
+        <div className="detailsButtons">
+        <DetailsButton details={details}/>
+        </div>
       </div>
+
     </div>
+
   )
 }
