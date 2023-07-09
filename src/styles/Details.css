@@ -1,0 +1,56 @@
+.detailsContainer {
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+ 
+  }
+
+
+.detailsImageContainer {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.detailsImage {
+    display: flex;
+    flex-wrap: wrap;
+    width: 500px;
+ 
+}
+
+.largeDiv {
+    width: 500px;
+    height: 500px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.largeDiv img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.smallDiv {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.smallDiv div {
+    width: 200px;
+    height: 100px;
+}
+
+.detailsImageContainer div {
+    border: 1px solid black;
+}
+
+.detailsTitleContainer {
+    width: 50%;
+    text-align: center;
+}
+

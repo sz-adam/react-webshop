@@ -6,14 +6,9 @@ export const CartContext = createContext();
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
 
-
-  console.log(cart)
-
   useEffect(() => {
     if (cart.length > 0) {
       localStorage.setItem('cart', JSON.stringify(cart));
-    } else {
-      localStorage.removeItem('cart');
     }
   }, [cart]);
 
