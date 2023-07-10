@@ -64,7 +64,7 @@
     font-size: 1.5rem;
   }
 
-  .mobile-menu-icon svg:hover {
+  .mobile-menu-icon:hover {
     transform: scale(1.1);
   }
 

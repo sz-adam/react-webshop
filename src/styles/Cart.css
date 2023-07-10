@@ -1,5 +1,4 @@
 .cartContainer {
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -21,8 +20,7 @@
 .cartImage img {
     width: 200px;
     height: 200px;
-    object-fit: cover;
-    
+    object-fit: cover;    
 }
 
 .cartTitle {
@@ -87,8 +85,8 @@
     border: 1px solid black;
     padding: 10px;
     border-radius: 20px;
-    background-color: rgb(55, 109, 209);
-    color: rgb(240, 239, 239);
+    background-color: rgb(56, 188, 206);
+    color: rgb(58, 58, 58);
     font-weight: 700;
 }
 

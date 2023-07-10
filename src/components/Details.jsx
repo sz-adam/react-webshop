@@ -33,8 +33,8 @@ export default function Details() {
         <p className="detailsTitle">{details.title}</p>
         <p className="detailsCategory">{details.category}</p>
         <p className="detailsDescription">{details.description}</p>
-        <p className="detailsRating">{details.rating && details.rating.rate}</p>
-        <p className="detailsPrice">{details.price}</p>
+        <p className="detailsRating">Rate {details.rating && details.rating.rate}</p>
+        <p className="detailsPrice">Price {details.price}</p>
 
         <div className="detailsButtons">
         <DetailsButton details={details}/>

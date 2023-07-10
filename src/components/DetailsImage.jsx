@@ -24,7 +24,7 @@ export default function DetailsImage({ details }) {
                         className={selectedItem && selectedItem.name === 'Item 1' ? 'smallActive' : 'smallItem'}
                         onClick={() => handleClick({ image: details.image, name: 'Item 1' })}
                     >
-                        1 <img
+                       <img
                             className="card-img"
                             src={details.image}
 
