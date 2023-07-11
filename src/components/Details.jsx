@@ -5,6 +5,7 @@ import '../styles/Details.css'
 import DetailsImage from './DetailsImage';
 
 import DetailsButton from './DetailsButton';
+import Stars from './Stars';
 
 
 export default function Details() {
@@ -33,11 +34,11 @@ export default function Details() {
         <p className="detailsTitle">{details.title}</p>
         <p className="detailsCategory">{details.category}</p>
         <p className="detailsDescription">{details.description}</p>
-        <p className="detailsRating">Rate {details.rating && details.rating.rate}</p>
+        <Stars rating={details.rating && details.rating.rate} count={details.rating && details.rating.count}/>
         <p className="detailsPrice">Price {details.price}</p>
-
+      
         <div className="detailsButtons">
-        <DetailsButton details={details}/>
+          <DetailsButton details={details}  />
         </div>
       </div>
 
