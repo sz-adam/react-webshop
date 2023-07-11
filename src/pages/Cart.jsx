@@ -5,6 +5,7 @@ import { AiFillMinusCircle } from 'react-icons/ai'
 import { AiFillPlusCircle } from 'react-icons/ai'
 import { AiFillDelete } from 'react-icons/ai'
 import { Link } from 'react-router-dom';
+import CartButtons from '../components/CartButtons';
 
 export default function Cart() {
   const { cart, removeCart, plusQuantity, minusQuantity } = useContext(CartContext);
@@ -39,8 +40,7 @@ export default function Cart() {
           </div>
           <p className='fullPrice'>Full Price: <span>{cart.reduce((total, item) => total + (item.quantity * item.price), 0).toFixed(2)}</span> </p>
           <div className='shoppingPayment'>
-            <Link className='link' to={"/"}>Continue Shopping</Link>
-            <Link className='link'>Payment</Link>
+            <CartButtons />
           </div>
         </div>
 
