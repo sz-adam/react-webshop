@@ -8,9 +8,9 @@ import { Link } from 'react-router-dom';
 export default function ProductsButton({ product }) {
     const { addToCart } = useContext(CartContext);
     return (
-        <div>
+        <div className='productsButton'>
             <button onClick={() => addToCart(product)}><FaCartArrowDown /></button>
-            <button > <Link className='productLink' to={`/details/${product.id}`} ><FaEye /></Link></button>
+            <button > <Link className='productButtonLink' to={`/details/${product.id}`} ><FaEye /></Link></button>
         </div>
     )
 }

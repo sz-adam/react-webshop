@@ -1,6 +1,5 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import '../styles/Products.css'
-
 import ProductsButton from './ProductsButton';
 
 export default function Products({ products }) {
