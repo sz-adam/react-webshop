@@ -11,8 +11,6 @@ import Stars from './Stars';
 export default function Details() {
   const { id } = useParams();
   const [details, setDetails] = useState([])
-
-  console.log(details)
   useEffect(() => {
     axios.get(`https://fakestoreapi.com/products/${id}`)
       .then(response => {

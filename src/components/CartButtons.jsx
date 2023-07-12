@@ -25,7 +25,7 @@ export default function CartButtons() {
                         <MdPayment size={16} className="cart" />
                     </span>
                     <p>
-                        <Link className="detailsButton" to={'/'}>
+                        <Link className="detailsButton" >
                             Payment
                         </Link>
                     </p>

@@ -1,59 +1,51 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import '../styles/DetailsImage.css'
 
 export default function DetailsImage({ details }) {
+    const [images, setImages] = useState([]);
     const [selectedItem, setSelectedItem] = useState(null);
+    const [selectedItemIndex, setSelectedItemIndex] = useState(null);
 
-    const handleClick = (item) => {
+
+    useEffect(() => {
+        if (details && details.image) {
+            const newImages = Array(5).fill({ url: details.image });
+            setImages(newImages);
+            setSelectedItem(newImages[0]);
+        }
+    }, [details])
+
+    console.log(images);
+
+
+    const handleItemClick = (item, index) => {
         setSelectedItem(item);
+        setSelectedItemIndex(index);     
     };
+
+
     return (
         <div>
             <div className="detailsImage">
                 <div className="largeDiv">
-                    {selectedItem && (
-                        <img
-                            className="card-img"
-                            src={selectedItem.image}
-                            alt={selectedItem.name}
-                        />
-                    )}
+                    {selectedItem && <img src={selectedItem.url} alt="" />}
                 </div>
                 <div className="smallDiv">
-                    <div
-                        className={selectedItem && selectedItem.name === 'Item 1' ? 'smallActive' : 'smallItem'}
-                        onClick={() => handleClick({ image: details.image, name: 'Item 1' })}
-                    >
-                       <img
-                            className="card-img"
-                            src={details.image}
+                    {images.map((img, index) => {
+                        return (
+                            <div
+                                key={index}
+                            >
+                                <img
+                                    src={img.url}
+                                    alt=""
+                                    onClick={() => handleItemClick(img, index)}
+                                    className={selectedItemIndex === index ? 'smallActive' : ''}
+                                />
 
-                        />
-                    </div>
-                    <div
-                        className={selectedItem && selectedItem.name === 'Item 2' ? 'smallActive' : ''}
-                        onClick={() => handleClick({ image: 'image2.jpg', name: 'Item 2' })}
-                    >
-                        2
-                    </div>
-                    <div
-                        className={selectedItem && selectedItem.name === 'Item 3' ? 'smallActive' : 'smallItem'}
-                        onClick={() => handleClick({ image: 'image3.jpg', name: 'Item 3' })}
-                    >
-                        3
-                    </div>
-                    <div
-                        className={selectedItem && selectedItem.name === 'Item 4' ? 'smallActive' : 'smallItem'}
-                        onClick={() => handleClick({ image: 'image4.jpg', name: 'Item 4' })}
-                    >
-                        4
-                    </div>
-                    <div
-                        className={selectedItem && selectedItem.name === 'Item 5' ? 'smallActive' : 'smallItem'}
-                        onClick={() => handleClick({ image: 'image5.jpg', name: 'Item 5' })}
-                    >
-                        5
-                    </div>
+                            </div>
+                        )
+                    })}
                 </div>
             </div>
         </div>
