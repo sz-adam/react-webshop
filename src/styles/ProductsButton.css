@@ -1,0 +1,28 @@
+.buttons {
+    display: none;
+}
+
+.products:hover .buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 30px 10px;
+    background-color: rgb(240, 240, 240, 0.5);
+    width: 50px;
+}
+
+.buttons button,
+.productLink {
+    margin: 10px 0;
+    font-size: 30px;
+    border: none;
+    cursor: pointer;
+    background: none;
+    color: black;
+
+}

@@ -1,12 +1,9 @@
 import React, { useContext } from 'react'
 import '../styles/Products.css'
-import { FaCartArrowDown } from 'react-icons/fa'
-import { FaEye } from 'react-icons/fa'
-import { CartContext } from '../context/CartContext';
-import { Link } from 'react-router-dom';
+
+import ProductsButton from './ProductsButton';
 
 export default function Products({ products }) {
-    const {cart, addToCart } = useContext(CartContext);
     return (
         <div>
             <div className="productsContainer">
@@ -23,15 +20,11 @@ export default function Products({ products }) {
                             <span>{product.price} $</span>
 
                             <div className="buttons">
-                                <button onClick={()=>addToCart(product)}><FaCartArrowDown /></button>
-                                <button > <Link className='productLink' to={`/details/${product.id}`} ><FaEye /></Link></button>
-                               
+                                <ProductsButton product={product}/>   
                             </div>
                         </div>
-
                     </div>
                 ))}
-
             </div >
         </div>
     )

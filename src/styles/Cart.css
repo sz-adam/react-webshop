@@ -54,7 +54,7 @@
 }
 
 .cartButtons button:nth-child(1):hover {
-    color: rgb(202, 54, 54);
+    color: rgb(231, 64, 64);
 }
 .cartButtons button:nth-child(3):hover {
     color: rgb(51, 163, 51);
