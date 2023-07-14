@@ -15,8 +15,6 @@ export default function DetailsImage({ details }) {
         }
     }, [details])
 
-    console.log(images);
-
 
     const handleItemClick = (item, index) => {
         setSelectedItem(item);
